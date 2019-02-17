@@ -23,6 +23,10 @@ Array.prototype.getRandom = function() {
 function pairs(names) {
   // Your code goes here
   let finalList = [];
+  if (names === [] || !names) {
+    return [];
+  }
+
   while (names.length > 1) {
     let name1 = names.getRandom();
     let name2 = names.getRandom();
@@ -36,9 +40,7 @@ function pairs(names) {
   console.log(finalList);
   return finalList;
 }
-if (typeof names === "undefined") {
-  return [];
-}
+
 pairs(["Asis", "Hamsa", "Fawas", "Mishmish", "Lailz"]);
 module.exports = pairs;
 
